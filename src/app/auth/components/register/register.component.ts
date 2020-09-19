@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { registerAction } from 'src/app/auth/store/actions'
 
 @Component({
   selector: 'app-register',
@@ -13,8 +15,13 @@ export class RegisterComponent implements OnInit {
     email: ['', Validators.required],
     password: ['', Validators.required],
   });
-  constructor( private formBuilder: FormBuilder){ }
+
+  constructor( private formBuilder: FormBuilder, private store:Store){ }
 
   ngOnInit(): void { }
-  submit(){ }
+
+  submit(){ 
+    this.store.dispatch(registerAction(this.registerForm.value))    
+  }
+
 }
