@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
     username: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
-  })
+  });
   constructor( private formBuilder: FormBuilder){ }
 
   ngOnInit(): void { }

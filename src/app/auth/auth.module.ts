@@ -10,7 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [RegisterComponent],
-  exports:[RegisterComponent],
+  exports: [RegisterComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
