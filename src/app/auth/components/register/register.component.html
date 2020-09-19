@@ -41,7 +41,7 @@
               <button
                 type="submit"
                 class="btn btn-success"
-               >
+                [disabled]="this.isSubmitting$ |async">
                 Register
               </button>
             </label>
