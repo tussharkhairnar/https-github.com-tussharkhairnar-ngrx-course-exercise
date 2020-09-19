@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   submit(){ 
     console.log('this.registerForm.value',this.registerForm.value)
-    this.store.dispatch(registerAction(this.registerForm.value))    
+    this.store.dispatch(registerAction(this.registerForm.value));
   }
 
 }
