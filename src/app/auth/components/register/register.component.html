@@ -1,1 +1,51 @@
-<p>register works!</p>
+<div class="container">
+    <div class="row" class="mt-5" > <h1>Register</h1>  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a class="link" href="javascript:;" routerLink="login"> Already registerd</a>
+        <div>
+          <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div>
+              <label for="name">
+                <input
+                  name="name"
+                  class="form-control"
+                  type="text"
+                  formControlName="username"/>
+              </label>
+            </div>
+            <div>
+              <label for="email">
+                <input
+                  name="email"
+                  class="form-control"
+                  type="email"
+                  formControlName="email"/>
+              </label>
+            </div>
+            <div>
+              <label for="password">
+                <input
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+              </label>
+            </div>
+            <div>
+              <label for="submit">
+                <button
+                  type="submit"
+                  class="btn btn-success"
+                 >
+                  Register
+                </button>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
