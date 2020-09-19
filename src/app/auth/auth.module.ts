@@ -5,7 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth.routing.module';
 
 import { RegisterComponent } from './components/register/register.component';
-
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/reducers' 
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RegisterComponent } from './components/register/register.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    StoreModule.forFeature('auth', reducers )
   ]
 })
 export class AuthModule { }
