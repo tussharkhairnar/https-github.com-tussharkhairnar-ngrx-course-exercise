@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
     this.initializeValues();
   }
 
+  //NOTE select fuction from rxjs is important
   initializeValues():void{
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
   }
