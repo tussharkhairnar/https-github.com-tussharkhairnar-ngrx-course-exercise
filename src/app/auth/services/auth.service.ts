@@ -14,11 +14,12 @@ export class AuthService {
 
     constructor(private httpClient: HttpClient) { }
 
+    //TODO : Create effect to make API call
     register(data: RegisterRequestInterface): Observable<CurrentUserInterface> {
         const url = `${environment.apiUrl}users`
         return this.httpClient
             .post<AuthReponseInterface>(url, data)
-            .pipe(map((response:AuthReponseInterface)=> response.user ))
+            .pipe(map((response: AuthReponseInterface) => response.user))
     }
 
 
