@@ -14,11 +14,11 @@ import { StoreModule } from '@ngrx/store';
   imports: [
     BrowserModule,
     NgbModule,
+    AppRoutingModule,
     AuthModule,
     RouterModule,
-    AppRoutingModule,
     StoreModule.forRoot({})
-  ],
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

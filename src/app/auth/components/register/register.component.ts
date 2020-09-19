@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+
 import { registerAction } from 'src/app/auth/store/actions'
 
 @Component({
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void { }
 
   submit(){ 
+    console.log('this.registerForm.value',this.registerForm.value)
     this.store.dispatch(registerAction(this.registerForm.value))    
   }
 
