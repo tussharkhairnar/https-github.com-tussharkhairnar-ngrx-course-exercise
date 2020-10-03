@@ -6,7 +6,10 @@
         <a class="link" href="javascript:;" routerLink="login"> Already registerd</a>
       </div>
       <div class="col-md-12">
-        {{this.isSubmitting$ | async}}
+       <!--  {{this.isSubmitting$ | async}} -->
+        <app-backend-error-messages 
+        *ngIf="backendErrors$ | async" 
+          [backendErrors]="backendErrors$ | async"> </app-backend-error-messages>
         <form [formGroup]="registerForm" (ngSubmit)="submit()">
           <div>
             <label for="name">

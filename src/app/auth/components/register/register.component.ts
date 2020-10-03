@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { registerAction } from 'src/app/auth/store/actions'
-import { isSubmittingSelector } from 'src/app/auth/store/selector'
+import { isSubmittingSelector, validationErrorSelector } from 'src/app/auth/store/selector'
 import { RegisterRequestInterface } from '../../types/register-request.interface';
 
 @Component({
@@ -15,6 +15,7 @@ import { RegisterRequestInterface } from '../../types/register-request.interface
 export class RegisterComponent implements OnInit {
 
   isSubmitting$ :Observable<boolean>;
+  backendErrors$:Observable<ValidationErrors>
 
   registerForm = this.formBuilder.group({
     username: ['', Validators.required],
@@ -30,7 +31,8 @@ export class RegisterComponent implements OnInit {
 
   //NOTE select fuction from rxjs is important
   initializeValues():void{
-    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorSelector));
   }
 
   submit(){ 
