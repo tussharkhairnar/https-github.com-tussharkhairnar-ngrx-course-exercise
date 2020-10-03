@@ -13,21 +13,21 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class RegisterEffect {
 
-    registre$ = createEffect(() => 
+    registre$ = createEffect(() =>
         this.actions.pipe(
             ofType(registerAction),
             switchMap(({ request }) => {
                 return this.authService.register(request)
                     .pipe(
                         map((currentUser: CurrentUserInterface) => {
-                            return registerSuccessAction({currentUser})
+                            return registerSuccessAction({ currentUser })
                         }),
-                        catchError( (errorResponse:HttpErrorResponse) => { 
-                            return of(registerFailureAction({errors:errorResponse.error.errors}))
+                        catchError((errorResponse: HttpErrorResponse) => {
+                            return of(registerFailureAction({ errors: errorResponse.error.errors }))
                         })
                     )
             })
-    ))
+        ))
 
     constructor(private actions: Actions, private authService: AuthService) { }
 
