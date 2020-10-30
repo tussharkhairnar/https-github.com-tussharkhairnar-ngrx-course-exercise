@@ -7,7 +7,7 @@ import {
   registerAction,
   registerFailureAction,
   registerSuccessAction,
-} from './actions/actions';
+} from './actions/register.actions';
 import { AuthService } from '../services/auth.service';
 import { CurrentUserInterface } from '../../shared/types/currentUser.interface';
 import { HttpErrorResponse } from '@angular/common/http';
