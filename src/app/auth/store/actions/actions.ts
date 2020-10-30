@@ -1,6 +1,6 @@
 import {createAction, props} from '@ngrx/store'
-import { ActionTypes } from './actionTypes'
-import { RegisterRequestInterface } from '../types/register-request.interface';
+import { ActionTypes } from '../actionTypes'
+import { RegisterRequestInterface } from '../../types/register-request.interface';
 import { CurrentUserInterface } from 'src/app/shared/types/currentUser.interface';
 import { BackendErrorInterface } from 'src/app/shared/types/backendErrors.interface';
 

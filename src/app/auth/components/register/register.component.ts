@@ -3,7 +3,7 @@ import { FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { registerAction } from 'src/app/auth/store/actions'
+import { registerAction } from 'src/app/auth/store/actions/actions'
 import { isSubmittingSelector, validationErrorSelector } from 'src/app/auth/store/selector'
 import { RegisterRequestInterface } from '../../types/register-request.interface';
 
